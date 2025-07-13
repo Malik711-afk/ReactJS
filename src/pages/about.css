@@ -1,0 +1,25 @@
+.about-page {
+  padding: 1.5rem;
+  background-color: #fff;
+  margin: 1rem 0;
+  border: 1px solid #ddd;
+}
+
+.about-page h1 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.about-page p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.about-list {
+  margin: 1rem 0 1.5rem 2rem;
+  line-height: 1.6;
+}
+
+.about-list li {
+  margin-bottom: 0.5rem;
+}
