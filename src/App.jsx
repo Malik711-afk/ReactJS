@@ -1,30 +1,30 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './navbar/Navbar';
-import Footer from './footer/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import Collection from './pages/Collection';
-import NotFound from './pages/NotFound';
+import { useEffect, useState } from "react";
 
-function App() {
+export default function App() {
+  const [advice, setAdvice] = useState("");
+  const [count, setCount] = useState(0);
+  
+  async function getAdvice() {
+    const response = await fetch("https://api.adviceslip.com/advice");
+    const data = await response.json();
+    setAdvice(data.slip.advice);
+    setCount(c => c + 1);
+  }
+
+  useEffect(() => {
+    getAdvice();
+  }, []);
+
   return (
-    <Router>
-      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-        <Navbar />
-        <main style={{ flex: 1 }}>
-          <div className="container">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/collection" element={<Collection />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </div>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <div>
+      <h1>{advice}</h1>
+      <button onClick={getAdvice}>Get Advice</button>
+      <Message count={count} />
+    </div>
   );
 }
-
-export default App;
+function Message(props) {
+  return (
+    <p>The amount of advices you read is: <strong>{props.count}</strong></p>
+  );
+}
