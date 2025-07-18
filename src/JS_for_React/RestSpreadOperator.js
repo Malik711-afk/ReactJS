@@ -144,13 +144,13 @@ const BOOKS = () => {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
-const book = getBook(4);
+const book = getBook(2);
 const {title, author, pages, publicationDate, genres, hasMovieAdaptation} = book;
 console.log(title, author, pages, publicationDate, genres, hasMovieAdaptation);
 
 // array destructuring
 
 
-const [primaryGenre, secondaryGenre] = genres
+const [primaryGenre, secondaryGenre, ...otherGenres] = genres
 
-console.log(primaryGenre, secondaryGenre);
+console.log(primaryGenre, secondaryGenre, ...otherGenres);
