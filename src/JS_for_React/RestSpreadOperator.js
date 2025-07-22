@@ -1,5 +1,4 @@
 // Object Destructuring
-
 const data = [
   {
     id: 1,
@@ -36,12 +35,12 @@ const data = [
   },
   {
     id: 2,
-    title: "The Cyberiad",
+    title: "The Cyberiad", 
     publicationDate: "1965-01-01",
     author: "Stanislaw Lem",
     genres: [
       "science fiction",
-      "humor",
+      "humor", 
       "speculative fiction",
       "short stories",
       "fantasy",
@@ -65,7 +64,7 @@ const data = [
   {
     id: 3,
     title: "Dune",
-    publicationDate: "1965-01-01",
+    publicationDate: "1965-01-01", 
     author: "Frank Herbert",
     genres: ["science fiction", "novel", "adventure"],
     hasMovieAdaptation: true,
@@ -144,7 +143,7 @@ const BOOKS = () => {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
-const book = getBook(2);
+const book = getBook(4);
 const {title, author, pages, publicationDate, genres, hasMovieAdaptation} = book;
 console.log(title, author, pages, publicationDate, genres, hasMovieAdaptation);
 
@@ -154,3 +153,7 @@ console.log(title, author, pages, publicationDate, genres, hasMovieAdaptation);
 const [primaryGenre, secondaryGenre, ...otherGenres] = genres
 
 console.log(primaryGenre, secondaryGenre, ...otherGenres);
+
+
+const summary = `${title} is a book with ${pages} pages and is written by ${author}.`
+console.log(summary);
