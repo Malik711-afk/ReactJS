@@ -1,7 +1,9 @@
 const data = {
     name: "saad",
     age: 20,
-    languages: ["React-Native", "python", "react JS", "PHP"]
+    languages: ["React-Native", "python", "react JS", "PHP"],
+    favFood: ["rice", "fast food"],
+    haveFavPulses: false
 }
 
 const Data = () => data;
@@ -15,5 +17,9 @@ console.log(greetings)
 
 const [firstLanguage, secondLanguage] = languages;
 console.log(firstLanguage);
+
+console.log(haveFavPulses && `You like pulses`)
+
+
 
 
